@@ -25,6 +25,9 @@ setup(
     packages=find_packages(),
     install_requires=(
         'django>=1.8',
+        'lxml',
+        'cssselect',
+        'scour',
     ),
     include_package_data=True,
     zip_safe=False,

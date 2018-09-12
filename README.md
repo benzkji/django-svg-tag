@@ -16,11 +16,11 @@ Install with pip (not yet):
     
 Add to installed apps:
 
-   INSTALLED_APPS = [
-   ...
-   'svg_tag'
-   ...
-   ]
+    INSTALLED_APPS = [
+    ...
+    'svg_tag'
+    ...
+    ]
    
 Place the svg files in your templates folder, for example in `your_project/svg/whatever.svg`.
 Then use the tag in your template:

@@ -33,6 +33,7 @@ def svg_tag(svg):
     scour_string = scour.scourString(svg_source, options=scour_options)
     lxml_object = html.fragment_fromstring(str(scour_string))
     for fill_node in lxml_object.cssselect('[fill]'):
-        del fill_node.attrib.fill
+        if getattr(fill_node.attrib, 'fill', None):
+            del fill_node.attrib.fill
     svg_out = html.tostring(lxml_object)
     return mark_safe(svg_out)

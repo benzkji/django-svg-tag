@@ -1,7 +1,5 @@
 from django import template
-from django.conf import settings
 from django.template.loader import get_template
-from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
 from lxml import html
 from scour import scour

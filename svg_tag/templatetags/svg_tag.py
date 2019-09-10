@@ -35,5 +35,5 @@ def svg_tag(svg):
     for fill_node in lxml_object.cssselect('[fill]'):
         if getattr(fill_node.attrib, 'fill', None):
             del fill_node.attrib.fill
-    svg_out = html.tostring(lxml_object)
+    svg_out = html.tostring(lxml_object, encoding='unicode')
     return mark_safe(svg_out)

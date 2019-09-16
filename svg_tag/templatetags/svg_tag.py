@@ -31,7 +31,11 @@ def svg_tag(svg):
     scour_string = scour.scourString(svg_source, options=scour_options)
     lxml_object = html.fragment_fromstring(str(scour_string))
     for fill_node in lxml_object.cssselect('[fill]'):
-        if getattr(fill_node.attrib, 'fill', None):
-            del fill_node.attrib.fill
+        # new style! https://stackoverflow.com/questions/6126789/selecting-attribute-values-from-lxml#6126846
+        if fill_node.get('fill', None):
+            del fill_node.attrib['fill']
+        # old style?!
+        # if getattr(fill_node.attrib, 'fill', None):
+        #     del fill_node.attrib.fill
     svg_out = html.tostring(lxml_object, encoding='unicode')
     return mark_safe(svg_out)

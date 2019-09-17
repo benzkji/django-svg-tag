@@ -4,13 +4,16 @@
 [![PyPi Version](https://img.shields.io/pypi/v/django-svg-tag.svg "PyPi Version")](https://pypi.python.org/pypi/django-svg-tag/)
 [![Licence](https://img.shields.io/pypi/l/django-svg-tag.svg "Licence")](https://pypi.python.org/pypi/django-svg-tag/)
 
+
 ## Features
 
-Output .svg files inline, with options how to treat them (cleanup, strip attributes, etc).
+Output .svg files inline, with options how to treat them (cleanup, strip attributes, etc). 
+For now, a basic "strip all fill attributes" is implemented.
+
 
 ## Usage
 
-Install with pip (not yet):
+Install with pip (not yet, needs tests!):
 
     pip install django-svg-tag
     
@@ -30,6 +33,7 @@ Then use the tag in your template:
     
 svg_tag uses the django template engine to locate svg files.
 
+
 ## Development
 
 
@@ -47,7 +51,7 @@ If you want to contribute to this project, please perform the following steps
     # Fork this repository
     # Clone your fork
     mkvirtualenv django-svg-tag
-    pip install -r test_requirements.txt
+    pip install .
     git checkout -b feature_branch
     # Implement your feature and tests
     git add . && git commit
